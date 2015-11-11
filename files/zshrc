@@ -18,3 +18,7 @@ alias fuck='$(thefuck $(fc -ln -1))'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
+
+# nvm integration
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
