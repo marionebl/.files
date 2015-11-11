@@ -1,0 +1,20 @@
+source ~/.antigenrc
+
+# Quicker navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias f="finder"
+alias o="open ./"
+alias showall='defaults write com.apple.finder AppleShowAllFiles YES;
+killall Finder /System/Library/CoreServices/Finder.app'
+alias hideall='defaults write com.apple.finder AppleShowAllFiles NO;
+killall Finder /System/Library/CoreServices/Finder.app'
+alias show='chflags nohidden'
+alias hide='chflags hidden'
+alias a='atom'
+alias fuck='$(thefuck $(fc -ln -1))'
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '

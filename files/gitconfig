@@ -1,0 +1,67 @@
+# TBC
+[alias]
+  # gerrit commands
+  publish = !sh -c 'git push origin HEAD:refs/publish/$1' -
+  draft = !sh -c 'git push origin HEAD:refs/drafts/$1' -
+  review = !sh -c 'git push origin HEAD:refs/for/$1%r=$2' -
+
+  # github hub commands
+  pr = !sh -c 'hub pull-request' -
+
+  # shortcuts
+  a = add
+  c = commit
+  ca = commit --amend
+  pr = pull --rebase
+  pu = push
+  r = reset --soft "HEAD^1"
+  s = status
+  hash = rev-parse --short HEAD
+  hist = log --oneline --graph --decorate
+
+  # helpers
+  zip = "!f() { TARGET=\"../${1-${PWD##*/}}-$(git hash).zip\"; git archive HEAD > $TARGET; echo $TARGET; }; f"
+
+[core]
+  # Use custom `.gitignore`
+  excludesfile = ~/.gitignore
+  # Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
+  whitespace = space-before-tab,indent-with-non-tab,trailing-space
+  editor = /usr/bin/vim
+
+[color]
+  # Use colors in Git commands that are capable of colored output when outputting to the terminal
+  ui = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[user]
+  name = Mario Nebl
+  email = hello@herebecode.com
+
+[push]
+  default = simple
+
+[pull]
+  rebase = true
+  default = set
+
+[credential]
+  helper = osxkeychain
+
+[mergetool]
+  keepBackup = true

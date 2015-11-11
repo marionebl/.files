@@ -1,0 +1,25 @@
+{
+  "name": "dotfiles-marionebl",
+  "version": "1.0.0",
+  "description": "assorted collection of .files",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "binary/install.sh",
+    "rcup": "temporary/bin/rcup -d files",
+    "rcdn": "temporary/bin/rcdn -d files",
+    "lsrc": "temporary/bin/lsrc -d files"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marionebl/.files.git"
+  },
+  "keywords": [
+    "dotfiles"
+  ],
+  "author": "Mario Nebl <mario.nebl@sinnerschrader.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marionebl/.files/issues"
+  },
+  "homepage": "https://github.com/marionebl/.files#readme"
+}
