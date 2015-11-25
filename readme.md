@@ -12,6 +12,9 @@ Collection of .files, not a lot of fanciness here.
 
 ## Usage
 ```
+# install .files, download rcm and compile
 npm install -g marneb-dotfiles
+
+# Symlink ./files/(.*) to ~/.$1
 marneb-rcup 
 ```
