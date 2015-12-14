@@ -15,6 +15,7 @@ alias show='chflags nohidden'
 alias hide='chflags hidden'
 alias a='atom'
 alias fuck='$(thefuck $(fc -ln -1))'
+alias learn='source ~/.zshrc'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
