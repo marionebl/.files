@@ -1,24 +1,30 @@
 source ~/.antigenrc
 
-# Quicker navigation
+# enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# quicker navigation
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias f="finder"
 alias o="open ./"
-alias showall='defaults write com.apple.finder AppleShowAllFiles YES;
+
+# hidden files management
+alias see='defaults write com.apple.finder AppleShowAllFiles YES;
 killall Finder /System/Library/CoreServices/Finder.app'
-alias hideall='defaults write com.apple.finder AppleShowAllFiles NO;
+alias unsee='defaults write com.apple.finder AppleShowAllFiles NO;
 killall Finder /System/Library/CoreServices/Finder.app'
 alias show='chflags nohidden'
 alias hide='chflags hidden'
+
+# convenience shortcuts
 alias a='atom'
 alias fuck='$(thefuck $(fc -ln -1))'
 alias learn='source ~/.zshrc'
-
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
+alias sd='cd /Volumes/mac-sd'
+alias hd='cd /Volumes/mac-hd'
 
 # nvm integration
 export NVM_DIR=~/.nvm
