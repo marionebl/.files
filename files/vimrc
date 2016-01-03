@@ -1,0 +1,69 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'scrooloose/syntastic'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'trusktr/seti.vim'
+Bundle 'jistr/vim-nerdtree-tabs'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" start nerdtree automatically
+autocmd vimenter * NERDTree
+
+" end vim if last open window is a nerdtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" start nerdtree tabs per default
+let g:nerdtree_tabs_open_on_console_startup=1
+
+" enable backspace deleting
+set backspace=2
+
+" enable syntax highlighting per default
+syntax on
+
+" enable line numbers
+set number
+
+" configure syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_warning_symbol = "⚠"
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+
+" theming
+hi CursorLine cterm=none ctermbg=DarkGrey
+hi LineNr ctermfg=DarkGrey
+hi CursorLineNr term=bold ctermfg=Yellow
+
+" mappings
+map <C-f> :NERDTreeFocusToggle
+map <C-t> :NERDTreeTabsToggle

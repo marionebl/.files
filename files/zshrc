@@ -25,10 +25,14 @@ alias fuck='$(thefuck $(fc -ln -1))'
 alias learn='source ~/.zshrc'
 alias sd='cd /Volumes/mac-sd'
 alias hd='cd /Volumes/mac-hd'
+alias vundle='vim +PluginInstall +qall'
 
 # nvm integration
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+
+# add node_modules/.bin/ to path
+PATH=$PATH:./node_modules/.bin/
 
 # z integration.
 source ~/.z.sh
