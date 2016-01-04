@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+set encoding=utf-8
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -12,6 +13,11 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'trusktr/seti.vim'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+Bundle 'dbakker/vim-lint'
 Bundle 'jistr/vim-nerdtree-tabs'
 
 " All of your Plugins must be added before the following line
@@ -29,9 +35,6 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" start nerdtree automatically
-autocmd vimenter * NERDTree
-
 " end vim if last open window is a nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -47,10 +50,27 @@ syntax on
 " enable line numbers
 set number
 
+" display whitespace
+set list
+set lcs=tab:▸\ ,eol:¬,space:.,nbsp:.
+set tabstop=2
+set fillchars+=vert:\
+
+" enable icons
+set guifont=Knack\ Regular\ Nerd\ Font\ 12
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+
 " configure syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_css_checkers = ['stylelint']
+let g:syntastic_typescript_checkers = ['tsc']
+let g:syntastic_vim_checkers = ['vimlint']
 
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_error_symbol = "✗"
@@ -59,10 +79,28 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
+" execute syntastic commands on save
+autocmd BufWritePost * SyntasticCheck
+autocmd BufEnter * SyntasticCheck
+
 " theming
 hi CursorLine cterm=none ctermbg=DarkGrey
 hi LineNr ctermfg=DarkGrey
 hi CursorLineNr term=bold ctermfg=Yellow
+hi NonText ctermfg=DarkGrey
+hi SpecialKey ctermfg=DarkGrey
+hi StatusLine ctermbg=DarkGrey ctermfg=DarkGrey
+hi VertSplit ctermbg=DarkGrey ctermfg=DarkGrey
+hi NERDTreeOpenable cterm=none ctermfg=Blue
+hi NERDTreeClosable cterm=none ctermfg=Blue
+hi SyntasticWarning ctermfg=Black
+hi SyntasticStyleError ctermfg=Black
+hi SyntasticStyleWarning ctermfg=Black
+hi Search term=standout ctermfg=0 ctermbg=11
+let g:airline_theme='powerlineish'
+
+" appease vim-airline
+set t_Co=16
 
 " mappings
 map <C-f> :NERDTreeFocusToggle
