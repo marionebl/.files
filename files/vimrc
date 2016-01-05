@@ -55,7 +55,7 @@ syntax on
 set number
 
 " display whitespace
-autocmd BufWinEnter * if &filetype == 'nerdtree' | setlocal nolist | echo 'tree' | else | setlocal list | echo 'notree' | endif
+autocmd BufWinEnter * if &filetype == 'nerdtree' | setlocal nolist | else | setlocal list | endif
 autocmd VimEnter * if &filetype !=# 'gitcommit' | set lcs+=tab:▸\ ,eol:¬,space:.,nbsp:.  | endif
 set tabstop=2
 set fillchars+=vert:\
