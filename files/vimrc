@@ -17,6 +17,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
+Plugin 'editorconfig/editorconfig-vim'
 Bundle 'dbakker/vim-lint'
 Bundle 'jistr/vim-nerdtree-tabs'
 
