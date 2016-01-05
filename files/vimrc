@@ -86,6 +86,7 @@ let g:syntastic_check_on_wq = 1
 " execute syntastic commands on save
 autocmd BufWritePost * SyntasticCheck
 autocmd BufEnter * SyntasticCheck
+autocmd InsertLeave * SyntasticCheck
 
 " theming
 hi CursorLine cterm=none ctermbg=DarkGrey
