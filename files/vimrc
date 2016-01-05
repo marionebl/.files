@@ -1,6 +1,6 @@
 set nocompatible              " be iMproved, required
 set encoding=utf-8
-filetype off                  " required
+filetype off " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -19,6 +19,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'heavenshell/vim-jsdoc'
+Plugin 'Valloric/YouCompleteMe'
 Bundle 'dbakker/vim-lint'
 Bundle 'jistr/vim-nerdtree-tabs'
 
@@ -101,6 +102,7 @@ hi SyntasticStyleError ctermfg=Black
 hi SyntasticStyleWarning ctermfg=Black
 hi Search cterm=standout ctermbg=White ctermfg=DarkGrey
 hi MatchParen ctermbg=DarkGrey
+hi PMenu ctermbg=DarkGrey ctermfg=LightGrey
 let g:airline_theme='powerlineish'
 
 " appease vim-airline
