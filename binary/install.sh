@@ -14,3 +14,12 @@ if [ "$sha" = "10a04bf8a299f7a4991006e65a7d8fb95615565b" ]
     make install
   else echo "checksums did not match"; exit 1;
 fi
+
+if [ ! command -v homebrew ]
+  then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+homebrew install the_silver_searcher cmake
+cd ~/.vim/bundle/YouCompleteMe
+./install.py

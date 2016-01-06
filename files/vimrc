@@ -24,6 +24,8 @@ Plugin 'heavenshell/vim-jsdoc'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-sensible'
+Plugin 'rking/ag.vim'
+Plugin 'taiansu/nerdtree-ag'
 
 " JavaScript
 Plugin 'helino/vim-json'
