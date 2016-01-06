@@ -36,3 +36,6 @@ PATH=$PATH:./node_modules/.bin/
 
 # z integration.
 source ~/.z.sh
+
+# java, sigh
+export JAVA_HOME=$(/usr/libexec/java_home)
