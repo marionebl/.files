@@ -1,5 +1,6 @@
-set nocompatible              " be iMproved, required
-set encoding=utf-8
+set nocompatible " be iMproved, required
+set encoding=utf-8 " set encoding
+set exrc " read project specific vimrc files
 filetype off " required
 
 " set the runtime path to include Vundle and initialize
@@ -20,6 +21,7 @@ Plugin 'bling/vim-airline'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'ctrlpvim/ctrlp.vim'
 Bundle 'dbakker/vim-lint'
 Bundle 'jistr/vim-nerdtree-tabs'
 
