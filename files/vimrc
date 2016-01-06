@@ -8,6 +8,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
+" Utilities
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -22,7 +23,14 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ctrlpvim/ctrlp.vim'
-Bundle 'dbakker/vim-lint'
+Plugin 'tpope/vim-sensible'
+
+" JavaScript
+Plugin 'helino/vim-json'
+Plugin 'pangloss/vim-javascript'
+Plugin 'marijnh/tern_for_vim'
+
+" Bundles
 Bundle 'jistr/vim-nerdtree-tabs'
 
 " All of your Plugins must be added before the following line
