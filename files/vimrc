@@ -50,11 +50,10 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" end vim if last open window is a nerdtree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" set shell to zsh
+set shell=zsh
 
 " start nerdtree tabs per default
-" let g:nerdtree_tabs_open_on_console_startup=1
 autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
 
 " enable backspace deleting
@@ -92,13 +91,8 @@ let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
-
-" execute syntastic commands on save
-autocmd BufWritePost * SyntasticCheck
-autocmd BufEnter * SyntasticCheck
-autocmd InsertLeave * SyntasticCheck
 
 " theming
 hi CursorLine cterm=none ctermbg=DarkGrey
