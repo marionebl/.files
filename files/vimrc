@@ -83,6 +83,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_css_checkers = ['stylelint']
 let g:syntastic_typescript_checkers = ['tsc']
 let g:syntastic_vim_checkers = ['vimlint']

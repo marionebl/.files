@@ -20,6 +20,12 @@ if [ ! command -v homebrew ]
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-homebrew install the_silver_searcher cmake
+PWD=$PWD
+
+homebrew install the_silver_searcher cmake neovim/neovim/neovim
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py
+cd ~/.vim/bundle/tern_for_vim
+npm install
+
+cd $PWD
