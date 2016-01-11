@@ -1,5 +1,8 @@
 source ~/.antigenrc
 
+# appease neovim
+export TERM=xterm-256color
+
 # enable aliases to be sudo’ed
 alias sudo='sudo '
 
