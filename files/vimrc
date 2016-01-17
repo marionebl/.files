@@ -10,6 +10,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 " Utilities
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
@@ -27,6 +28,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'rking/ag.vim'
 Plugin 'taiansu/nerdtree-ag'
 Plugin 'benekastah/neomake'
+Plugin 'yggdroot/indentline'
 
 " JavaScript
 Plugin 'helino/vim-json'
@@ -51,9 +53,6 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" set shell to zsh
-set shell=zsh
-
 " start nerdtree tabs per default
 autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
 
@@ -66,9 +65,14 @@ syntax on
 " enable line numbers
 set number
 
+" remap <leader> to ,
+let mapleader=","
+
 " display whitespace
-autocmd BufWinEnter * if &filetype == 'nerdtree' | setlocal nolist | else | setlocal list | endif
+set list
 autocmd VimEnter * if &filetype !=# 'gitcommit' | set lcs+=tab:▸\ ,eol:¬,space:.,nbsp:.  | endif
+
+" tabs
 set tabstop=2
 set fillchars+=vert:\
 
@@ -81,19 +85,9 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 
-" configure syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_javascript_checkers = ['eslint']
-" let g:syntastic_json_checkers = ['jsonlint']
-" let g:syntastic_css_checkers = ['stylelint']
-" let g:syntastic_typescript_checkers = ['tsc']
-" let g:syntastic_vim_checkers = ['vimlint']
-
-let g:neomake_open_list = 2
+let g:neomake_open_list = 1
 let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_verbose = 1
 let g:neomake_json_enabled_makers = ['jsonlint']
 let g:neomake_css_checkers = ['stylelint']
 let g:neomake_typescript_checkers = ['tsc']
@@ -101,9 +95,6 @@ let g:neomake_vim_checkers = ['vint']
 let g:neomake_html_checkers = []
 
 autocmd! BufWinEnter * Neomake
-autocmd! InsertLeave * Neomake
-autocmd! CursorHold * Neomake
-autocmd! CursorHoldI * Neomake
 autocmd! BufWritePost * Neomake
 
 hi NeomakeWarningMessage ctermfg=Yellow
@@ -111,14 +102,6 @@ hi NeomakeErrorMessage ctermfg=Red
 
 let g:neomake_warning_sign = { 'text': '⚠', 'texthl': 'NeomakeWarningMessage' }
 let g:neomake_error_sign = { 'text': '✗', 'texthl': 'NeomakeErrorMessage' }
-
-
-" let g:syntastic_warning_symbol = "⚠"
-" let g:syntastic_error_symbol = "✗"
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_wq = 1
 
 " theming
 hi CursorLine cterm=none ctermbg=DarkGrey
@@ -137,9 +120,6 @@ hi Search cterm=standout ctermbg=White ctermfg=234
 hi MatchParen ctermbg=DarkGrey
 hi PMenu ctermbg=DarkGrey ctermfg=LightGrey
 let g:airline_theme='powerlineish'
-
-" appease vim-airline
-set t_Co=16
 
 " mappings
 map <C-f> :NERDTreeFocusToggle
