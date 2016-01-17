@@ -98,6 +98,7 @@ let g:neomake_json_enabled_makers = ['jsonlint']
 let g:neomake_css_checkers = ['stylelint']
 let g:neomake_typescript_checkers = ['tsc']
 let g:neomake_vim_checkers = ['vint']
+let g:neomake_html_checkers = []
 
 autocmd! BufWinEnter * Neomake
 autocmd! InsertLeave * Neomake
