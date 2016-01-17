@@ -3,10 +3,14 @@ source ~/antigen.zsh
 autoload -U add-zsh-hook
 
 antigen-use oh-my-zsh
-antigen-theme agnoster
+# antigen-theme agnoster
+antigen-theme marionebl/paternoster paternoster
 
 antigen-bundle djui/alias-tips
-antigen-bundle olesu/oh-my-zsh-plugin-nvm
 antigen-bundle gulp
+antigen-bundle npm
+antigen-bundle nvm
+antigen-bundle git
+antigen-bundle zsh-users/zsh-syntax-highlighting
 
 antigen-apply

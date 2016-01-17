@@ -34,10 +34,19 @@ alias vundle='vim +PluginInstall +qall'
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
+# rvm integration
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# jenv integration
+PATH=$PATH:$HOME/.jenv/bin
+export JENV_ROOT=/usr/local/var/jenv
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
 # add node_modules/.bin/ to path
 PATH=$PATH:./node_modules/.bin/
 
-# z integration.
+# z integration
 source ~/.z.sh
 
 # java, sigh

@@ -72,6 +72,9 @@ autocmd VimEnter * if &filetype !=# 'gitcommit' | set lcs+=tab:▸\ ,eol:¬,spac
 set tabstop=2
 set fillchars+=vert:\
 
+" configure ctrl+p to ignore files in gitignore
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
 " enable icons
 set guifont=Knack\ Regular\ Nerd\ Font\ 12
 set laststatus=2
