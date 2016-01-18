@@ -1,0 +1,56 @@
+set nocompatible " be iMproved, required
+set encoding=utf-8 " set encoding
+set exrc " read project specific vimrc files
+filetype off " required
+
+" set the runtime path to include Vundle and initialize
+set runtimepath+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+" Utilities
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'scrooloose/syntastic'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'trusktr/seti.vim'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'heavenshell/vim-jsdoc'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-sensible'
+Plugin 'rking/ag.vim'
+Plugin 'taiansu/nerdtree-ag'
+Plugin 'benekastah/neomake'
+Plugin 'yggdroot/indentline'
+Plugin 'MarcWeber/vim-addon-local-vimrc'
+
+" JavaScript
+Plugin 'helino/vim-json'
+Plugin 'pangloss/vim-javascript'
+Plugin 'marijnh/tern_for_vim'
+
+" Bundles
+Bundle 'jistr/vim-nerdtree-tabs'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
