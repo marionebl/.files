@@ -6,6 +6,8 @@ antigen-use oh-my-zsh
 # antigen-theme agnoster
 antigen-theme marionebl/paternoster paternoster
 
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
 antigen-bundle djui/alias-tips
 antigen-bundle gulp
 antigen-bundle npm

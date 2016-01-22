@@ -34,13 +34,14 @@ let g:airline_powerline_fonts = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 
 let g:neomake_open_list = 1
+
+" neomake makers config
 let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_verbose = 1
 let g:neomake_json_enabled_makers = ['jsonlint']
-let g:neomake_css_checkers = ['stylelint']
-let g:neomake_typescript_checkers = ['tsc']
-let g:neomake_vim_checkers = ['vint']
-let g:neomake_html_checkers = []
+let g:neomake_css_enabled_makers = ['stylelint']
+let g:neomake_typescript_enabled_makers = ['tsc']
+let g:neomake_vim_enabled_makers = ['vint']
+let g:neomake_html_enabled_makers = []
 
 autocmd! BufWinEnter * Neomake
 autocmd! BufWritePost * Neomake
