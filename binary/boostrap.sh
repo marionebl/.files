@@ -1,11 +1,18 @@
 #/bin/bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# cli tools
+xcode-select --install
+
+# rvm and homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" &&\
+curl -L https://get.rvm.io | bash -s stable --auto-dotfiles --autolibs=enable --rails &&\
 
 # install cli essentials
 brew install \
+  git \
+  hub \
   rcm\
   nvm\
-  rvm\
   jenv\
   docker\
   docker-machine\
