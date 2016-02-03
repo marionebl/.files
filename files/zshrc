@@ -49,5 +49,8 @@ PATH=$PATH:./node_modules/.bin/
 # z integration
 source ~/.z.sh
 
+# npm completion
+eval $(npm completion)
+
 # java, sigh
 export JAVA_HOME=$(/usr/libexec/java_home)
