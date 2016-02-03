@@ -1,4 +1,8 @@
+# antigen!
 source ~/.antigenrc
+
+# if there is a env file, read it
+test -f ~/.env && source ~/.env
 
 # appease neovim
 export TERM=xterm-256color
