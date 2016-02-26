@@ -1,13 +1,9 @@
 #/bin/bash
 
 # cli tools
-xcode-select --install
-
-# rvm and homebrew
+xcode-select --install &&\
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" &&\
 curl -L https://get.rvm.io | bash -s stable --auto-dotfiles --autolibs=enable --rails &&\
-
-# install cli essentials
 brew install \
   git \
   hub \
@@ -22,8 +18,6 @@ brew install \
   neovim/neovim/neovim\
   the_silver_searcher\
   cmake &&\
-
-# install essential applications
 brew cask install\
   google-chrome\
   firefox\
@@ -31,18 +25,15 @@ brew cask install\
   dropbox\
   totalterminal\
   bartender\
-  atom &&\
-# runtimes
+  atom\
+  xquartz\
+  sketch\
+  sketch-tool\
+  inkscape &&\
 nvm install 5 &&\
 nvm alias default 5 &&\
-
-# get the configuration party started
 rcm up &&\
-
-# install vim bundles &&\
 vim +PluginInstall
-
-# some hoops
 cd ~/.vim/bundle/YouCompleteMe &&\
 ./install.py &&\
 cd ~/.vim/bundle/tern_for_vim &&\

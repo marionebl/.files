@@ -4,7 +4,12 @@ source ~/.antigenrc
 # if there is a env file, read it
 test -f ~/.env && source ~/.env
 
-# appease neovim
+# if there is a running docker-machine, connect to it
+# todo: make this async
+if [[ $(docker-machine status default) = 'Running' ]]; then;
+  eval $(docker-machine env default) > /dev/null 2>&1
+fi
+# appease neovim>
 export TERM=xterm-256color
 
 # enable aliases to be sudo’ed
@@ -33,14 +38,36 @@ alias learn='source ~/.zshrc'
 alias sd='cd /Volumes/mac-sd'
 alias hd='cd /Volumes/mac-hd'
 alias vundle='vim +PluginInstall +qall'
+alias dnsreset='sudo killall -HUP mDNSResponder'
+alias chrome='open http://'
+
+# docker-machine helper
+machine() {
+  if [ $# -eq 0 ]; then
+    docker-machine
+  elif [ $# -eq 1 ]; then
+    docker-machine "$@" default;
+  else
+    docker-machine "$@"
+  fi
+
+  if [ "$#" == "start" ]; then
+    if [ -n "$2" ]; then
+      eval(docker-machine env default)
+    else
+      eval(docker-machine env $2)
+    fi
+  fi
+}
+
+# pyenv integration
+export PATH="/Users/marneb/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # nvm integration
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-
-# rvm integration
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # jenv integration
 PATH=$PATH:$HOME/.jenv/bin
@@ -58,3 +85,13 @@ eval $(npm completion)
 
 # java, sigh
 export JAVA_HOME=$(/usr/libexec/java_home)
+
+# rvm integration
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+
+# rvm, sign
+rvm use default > /dev/null
+
+# added by travis gem
+[ -f /Users/marneb/.travis/travis.sh ] && source /Users/marneb/.travis/travis.sh

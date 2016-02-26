@@ -70,6 +70,10 @@ hi MatchParen ctermbg=DarkGrey
 hi PMenu ctermbg=DarkGrey ctermfg=LightGrey
 let g:airline_theme='powerlineish'
 
+" markdown preview
+let g:livedown_open = 1
+let g:livedown_port = 1336
+
 " mappings
 map <C-f> :NERDTreeFocusToggle
 map <C-t> :NERDTreeTabsToggle
