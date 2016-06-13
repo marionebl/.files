@@ -40,6 +40,8 @@ alias hd='cd /Volumes/mac-hd'
 alias vundle='vim +PluginInstall +qall'
 alias dnsreset='sudo killall -HUP mDNSResponder'
 alias chrome='open http://'
+alias min='open -a Min http://'
+alias code='open -a Visual\ Studio\ Code'
 
 # docker-machine helper
 machine() {
@@ -87,11 +89,11 @@ eval $(npm completion)
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 # rvm integration
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 
 # rvm, sign
-rvm use default > /dev/null
+# rvm use default > /dev/null
 
 # added by travis gem
-[ -f /Users/marneb/.travis/travis.sh ] && source /Users/marneb/.travis/travis.sh
+# [ -f /Users/marneb/.travis/travis.sh ] && source /Users/marneb/.travis/travis.sh
