@@ -42,6 +42,7 @@ alias dnsreset='sudo killall -HUP mDNSResponder'
 alias chrome='open http://'
 alias min='open -a Min http://'
 alias code='open -a Visual\ Studio\ Code'
+alias markdown='open -a Abricotine'
 
 # docker-machine helper
 machine() {
