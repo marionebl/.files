@@ -84,7 +84,9 @@ PATH=$PATH:./node_modules/.bin/
 source ~/.z.sh
 
 # npm completion
-eval $(npm completion)
+if [ type npm >/dev/null 2>&1 ]; then
+  eval $(npm completion)
+fi
 
 # java, sigh
 export JAVA_HOME=$(/usr/libexec/java_home)
@@ -98,3 +100,5 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 
 # added by travis gem
 # [ -f /Users/marneb/.travis/travis.sh ] && source /Users/marneb/.travis/travis.sh
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
