@@ -1,6 +1,6 @@
 {
   "name": "dotfiles-marionebl",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "assorted collection of .files",
   "bin": "bin.sh",
   "scripts": {
