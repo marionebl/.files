@@ -2,7 +2,7 @@
   "name": "dotfiles-marionebl",
   "version": "1.1.1",
   "description": "assorted collection of .files",
-  "main": "index.js",
+  "bin": "bin.sh",
   "scripts": {
     "postinstall": "binary/install.sh",
     "rcup": "temporary/bin/rcup -d files",

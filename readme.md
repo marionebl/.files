@@ -16,5 +16,11 @@ Collection of .files, not a lot of fanciness here.
 npm install -g dotfiles-marionebl
 
 # Symlink ./files/(.*) to ~/.$1
-marneb-rcup 
+dotfiles-marionebl up
+
+# Remove symlinks in ~/
+dotfiles-marionebl down
+
+# List symlinks in ~/
+dotfiles-marionebl list
 ```
