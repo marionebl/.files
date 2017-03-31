@@ -51,7 +51,6 @@
 
 [user]
   name = Mario Nebl
-  email = hello@herebecode.com
 
 [push]
   default = simple
